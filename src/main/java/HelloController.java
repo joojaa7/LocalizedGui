@@ -27,6 +27,8 @@ public class HelloController {
 
     private Locale locale;
 
+    private final String NAME = "Mikael";
+
 
 
     @FXML
@@ -38,7 +40,7 @@ public class HelloController {
     private void loadLanguage(String lang, String country){
         locale = new Locale(lang, country);
         resourceBundle = ResourceBundle.getBundle("message", locale);
-        lbl.setText(resourceBundle.getString("greeting"));
+        lbl.setText(resourceBundle.getString("greeting") + " " + NAME);
     }
 
     @FXML
